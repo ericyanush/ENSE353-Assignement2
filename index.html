@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Subscriptions Server</title>
+
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-styles/demo-pages.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <script type="text/javascript" src="index.js"></script>
+
+
+    <style is="custom-style">
+      body {
+        padding: 40px;
+        overflow: hidden;
+      }
+
+      paper-header-panel {
+        width: 450px;
+        height: 600px;
+        margin: 12px;
+        @apply(--shadow-elevation-2dp);
+      }
+
+      .paper-header {
+        height: 60px;
+        font-size: 16px;
+        line-height: 60px;
+        padding: 0 10px;
+        color: white;
+        transition: height 0.2s;
+        text-align: center;
+      }
+      .content {
+        height: 490px;
+        padding: 25px;
+      }
+      .content h4 {
+        text-align: center;
+      }
+      .blue .paper-header {
+        background-color: var(--paper-light-blue-500);
+      }
+      .blue .content {
+        background: linear-gradient(white, #b3e5fc);
+      }
+      #submit {
+        background-color: #66FF99;
+        color: green;
+        width: 50%;
+        margin: 0 auto 0 auto;
+      }
+      #submit::shadow paper-ripple {
+        color: green;
+      }
+      #submit[disabled] {
+        opacity: 0.5;
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+
+  <body class="fullbleed">
+    <div class="fit layout horizontal center">
+      <div class="blue flex layout vertical center">
+        <paper-header-panel>
+          <div class="paper-header">Subcribe to Junk</div>
+          <div class="content vertical layout">
+            <div class="vertical-section">
+              <paper-input id="name-input" label="name"></paper-input>
+              <paper-input id="email-input" label="email" type="email"></paper-input>
+            </div>
+            <div class="flex three layout vertical">
+              <h4>Choose some publications to subscribe to:</h4>
+              <paper-checkbox data-pub-id="1" class="vertical-section layout horizontal center">Make Magazine</paper-checkbox>
+              <paper-checkbox data-pub-id="2" class="vertical-section layout horizontal center">Hackaday Daily Digest</paper-checkbox>
+              <paper-checkbox data-pub-id="3" class="vertical-section layout horizontal center">The Onion</paper-checkbox>
+            </div>
+            <paper-button raised id="submit">Send me shit!</paper-button>
+          </div>
+        </paper-header-panel>
+      </div>
+    </div>
+  </body>
+
+</html>

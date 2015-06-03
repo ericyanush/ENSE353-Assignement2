@@ -70,34 +70,7 @@ $app->post('/api/subscriptions', function() use ($app) {
 		'publication_id' => $sub->publication_id
 	));
 
-	//Create a response
-    $response = new Response();
-
-    //Check if the insertion was successful
-    if ($status->success() == true) {
-
-        //Change the HTTP status
-        $response->setStatusCode(201, "Created");
-
-        $sub->id = $status->getModel()->id;
-
-        $response->setJsonContent(array('status' => 'OK', 'data' => $sub));
-
-    } else {
-
-        //Change the HTTP status
-        $response->setStatusCode(409, "Conflict");
-
-        //Send errors to the client
-        $errors = array();
-        foreach ($status->getMessages() as $message) {
-            $errors[] = $message->getMessage();
-        }
-
-        $response->setJsonContent(array('status' => 'ERROR', 'messages' => $errors));
-    }
-
-    return $response;
+	echo "Success";
 });
 
 //Update a subscription

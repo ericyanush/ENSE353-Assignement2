@@ -1,0 +1,22 @@
+{
+  "name": "assignment2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ericyanush/ENSE353-Assignement2",
+  "authors": [
+    "Eric Yanush <ericyanush@gmail.com>"
+  ],
+  "description": "Assignement 2 user interface",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.1"
+  }
+}
